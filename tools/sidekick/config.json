@@ -1,4 +1,5 @@
 {
+  "project": "Franklin EDS",
   "plugins": [
     {
       "id": "google-assist",
