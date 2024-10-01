@@ -37,6 +37,6 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // Allow importing dev dependencies
     'global-require': 'off', // Allow require() calls
     'import/no-unresolved': 'off', // Disable unresolved import errors if using dynamic imports
-    "no-console": "off"
+    "no-console": 'off'
   },
 };
