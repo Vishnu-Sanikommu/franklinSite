@@ -1,22 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-
-const fluid = require('tailwindcss-fluid');
-
 module.exports = {
   content: ['./blocks/**/*.{html,js,css}', './head.html'],
-  important: '.tw',
-  prefix: 'tw-',
   theme: {
     extend: {
-      colors: require('./tailwind.colors.js'),
-      listStyleType: {
-        none: 'none',
-        disc: 'disc',
-        decimal: 'decimal',
-        square: 'square',
-        roman: 'upper-roman',
+      fontFamily: {
+        sans: ['Geogrotesque'],
+      },
+      margin: {
+        '512': '512px',
       },
       fontSize: {
+        '36.1883' : '36.1883px',
         'xl-display': ['140px', '1'],
         'l-display': ['80px', '1.2'],
         alfa: ['64px', '1.2'],
@@ -42,7 +36,11 @@ module.exports = {
         mobBase: ['15px', '23px'],
         mobSm: ['13px', '18px'],
         mobCaptionLg: ['13px', '16px'],
-        mobCaptionSm: ['11px', '14px'],
+        mobCaptionSm: ['11px', '14px']
+      },
+      lineHeight: {
+        '62.4': '62.4px',
+        '43.4259': '43.4259px'
       },
       fontWeight: {
         thin: '270',
@@ -54,20 +52,26 @@ module.exports = {
         bolder: '530',
         extrabold: '800',
         'extra-bold': '800',
-        black: '900',
+        black: '900'
       },
-      screens: {
-        'max-container': '1536px',
-        xxl: '1440px',
-      },
-      aspectRatio: {
-        '2/3': '2 / 3',
-        '3/4': '3 / 4',
-        '4/3': '4 / 3',
-        '4/5': '4 / 5',
-        '3/2': '3 / 2',
-        '8/5': '8 / 5',
-        '16/9': '16 / 9',
+      letterSpacing: {
+        nav: '0.005em',
+        tight: '-.01em',
+        wide: '.005em',
+        wider: '.1em',
+        widest: '.3em',
+        xlDisplay: '-1.4px',
+        lDisplay: '-0.8px',
+        lg: '0.048px',
+        base: '0.08px',
+        sm: '0.07px',
+        captionLg: '1.4px',
+        captionSm: '1.2px',
+        mobLg: '0.085px',
+        mobBase: '0.075px',
+        mobSm: '0.065px',
+        mobCaptionLg: '1.3px',
+        mobCaptionSm: '1.1px',
       },
       spacing: {
         unset: 'unset',
@@ -140,170 +144,29 @@ module.exports = {
 
         full: '100%',
       },
-      width: {
-        '16p': '16px',
-      },
-      height: {
-        '16p': '16px',
-      },
-      maxWidth: {
-        384: '384px',
-        512: '512px',
-        640: '640px',
-        720: '720px',
-        768: '768px',
-      },
-      letterSpacing: {
-        nav: '0.005em',
-        tight: '-.01em',
-        wide: '.005em',
-        wider: '.1em',
-        widest: '.3em',
-        xlDisplay: '-1.4px',
-        lDisplay: '-0.8px',
-        lg: '0.048px',
-        base: '0.08px',
-        sm: '0.07px',
-        captionLg: '1.4px',
-        captionSm: '1.2px',
-        mobLg: '0.085px',
-        mobBase: '0.075px',
-        mobSm: '0.065px',
-        mobCaptionLg: '1.3px',
-        mobCaptionSm: '1.1px',
-      },
-      gridTemplateColumns: {
-        productRowLg: '1fr auto 1fr auto 1fr auto 1fr;',
-        productRowMd: '1fr auto 1fr;',
-      },
-      boxShadow: {
-        boxShadow: '0px 8px 16px 0px rgba(19, 19, 19, 0.05)',
-      },
     },
-    fontFamily: {
-      sans: ['Geogrotesque'],
-    },
-    container: {
-      center: true,
-      padding: {
-        DEFAULT: '24px',
-        lg: '40px',
-        xl: '64px',
-      },
-    },
+    screens: {
+      // Mobile devices
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      // Tablet
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      // Laptop
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      // Laptop Large
+      'xl': '1440px',
+      // => @media (min-width: 1280px) { ... }
+
+      // 4K device
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    }
   },
-  plugins: [
-    fluid({
-      suffix: '',
-      textSizes: {
-        'xl-display': {
-          min: '64px',
-          max: '140px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        'l-display': {
-          min: '48px',
-          max: '80px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        alfa: {
-          min: '34px',
-          max: '64px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        bravo: {
-          min: '31px',
-          max: '52px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        charlie: {
-          min: '27px',
-          max: '40px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        delta: {
-          min: '23px',
-          max: '32px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        echo: {
-          min: '19px',
-          max: '24px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        base: {
-          min: '15px',
-          max: '16px',
-          minvw: '600px',
-          maxvw: '1280px',
-        },
-        xl: '20px',
-        lg: '18px',
-        mobLg: '17px',
-        mobBase: '15px',
-        sm: '14px',
-        mobSm: '13px',
-        xs: '12px',
-        caption: '13px',
-        captionLarge: '14px',
-        captionSmall: '12px',
-      },
-    }),
-  ],
-  purge: {
-    options: {
-      safelist: [
-        'wallsio-load-more-button',
-        'atomic-container-left-1-col .atomic-richtext-content',
-        'document-sub-nav .atomic-container-left-1-col .atomic-richtext-content .atomic-richtext-content-w-full',
-        'document-sub-nav .atomic-container-center-1-col .atomic-richtext-content .atomic-richtext-content-w-full',
-        'document-sub-nav .atomic-container-left-1-col .media-image .atomic-richtext-content',
-        'tw-h-[calc(95svh-64px)]', 'md:tw-h-[calc(95svh-133px)]',
-        'tw-grid-cols-1',
-        'sm:tw-grid-cols-2',
-        'lg:tw-grid-cols-3',
-        'lg:tw-grid-cols-4',
-        '.accordion-content div[role="region"] div section:first-child',
-        '.tab-content div[role="tabpanel"] > div > section',
-        '.tab-content div[role="tabpanel"] .cmp-container div:last-child section:last-of-type',
-        '.cmp-container:has(> .product-row-xf)',
-        '.product-row-xf',
-        'input[type="range"]',
-        'input[type="range" i]::-webkit-slider-thumb',
-        'input[type="range"]::-moz-range-thumb',
-        'tw-mt-32',
-        'tw-mt-16',
-        'tw-mt-24',
-        'tw-mt-64',
-        'md:tw-mt-48',
-        'md:tw-mt-24',
-        'md:tw-mt-32',
-        'md:tw-mt-96',
-        'tw-mb-32',
-        'tw-mb-16',
-        'tw-mb-24',
-        'tw-mb-64',
-        'md:tw-mb-48',
-        'md:tw-mb-24',
-        'md:tw-mb-32',
-        'md:tw-mb-96',
-        'tw-top-[60px]',
-        'md:tw-top-[131px]',
-        'richtext-minimal',
-      ],
-    },
-  },
-  variants: {
-    extend: {
-      border: ['first'],
-      textColor: ['group-hover'],
-    },
-  },
-};
+  plugins: [],
+}
+
