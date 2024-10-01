@@ -6,6 +6,10 @@ header .nav-wrapper {
   position: fixed;
 }
 
+header {
+  height: 64px;
+}
+
 header nav {
   box-sizing: border-box;
   display: grid;
